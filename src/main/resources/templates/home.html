@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="webjars/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <title>AppSheet Project</title>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-text">
+    The 5 Youngest People Ordered in Name
+  </span>
+</nav>
+<div class="container-fluid">
+<div class="card-deck">
+    <div id="userList" th:each="user : ${users}">
+        <div class="card" style="width:250px;">
+            <img class="card-img-top rounded-circle" th:src="${user.photo}" th:alt="${user.name}">
+            <div class="card-body">
+                <div class="card-title font-weight-bold">Name:&nbsp;<span class="font-weight-normal" th:text="${user.name}"></span></div>
+                <div class="card-title font-weight-bold">Age:&nbsp;<span class="font-weight-normal" th:text="${user.age}"></span></div>
+                <div class="card-title font-weight-bold">Number:&nbsp;<span class="font-weight-normal" th:text="${user.number}"></span></div>
+                <div class="card-text font-italic" th:text="${user.bio}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
